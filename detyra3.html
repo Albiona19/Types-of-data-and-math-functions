@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detyra 3</h1>
+</body>
+
+<script>
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    var euroRate = 0.98;
+    var sekRate = 10.49;
+    var audRate = 1.46;
+
+    var usd = prompt("Enter $USD amount:");
+
+    while(!isNumeric(usd)){
+        console.log('Please enter a valid number: ');
+        usd = prompt("Enter $USD amount:");
+    }
+
+    var currencyIndex = prompt("Select currency 1(EUR), 2(SEK), 3(AUD):");
+
+    while(!isNumeric(currencyIndex) || currencyIndex > 3 || currencyIndex < 1){
+        console.log('Please enter a valid number (1, 2 or 3): ');
+        currencyIndex = prompt("Select currency 1(EUR), 2(SEK), 3(AUD):");
+    }
+    
+    if(currencyIndex == 1){
+        console.log(usd + " USD($) is = " + (usd*euroRate) + " EUR(€)");
+    }else if(currencyIndex == 2){
+        console.log(usd + " USD($) is = " + (usd*sekRate) + " SEK(kr)");
+    }else{
+        console.log(usd + " USD($) is = " + (usd*audRate) + " AUD($)");
+    }
+
+</script>
+</html>
